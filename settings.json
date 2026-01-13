@@ -6,6 +6,11 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
+//
+// For the Language Server Protocol section ("lsp"), I use the
+// tool "rust-analyzer" to provide Rust programming help.
+// I also use "inlay hints", which makes Zed show more help,
+// including LSP rust-analyzer type hints for variables.
 {
   "base_keymap": "VSCode",
   "soft_wrap": "none",
@@ -13,8 +18,21 @@
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "vim_mode": false,
   "ui_font_size": 12,
+  "format_on_save": "off",
   "buffer_font_size": 12,
   "theme": "joelparkerhenderson-dark",
   "preferred_line_length": 80,
-  "allow_rewrap": "anywhere"
+  "allow_rewrap": "anywhere",
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        }
+      }
+    }
+  },
+  "inlay_hints": {
+    "enabled": true
+  }
 }
