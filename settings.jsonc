@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+//
+// This file uses JSONC, which means JSON with comments.
+//
+{
+  "base_keymap": "VSCode",
+  "soft_wrap": "none",
+  "vim_mode": false,
+  // I like Iosevka Nerd Font Mono 12 for all text, including in the main pane
+  // and also in the sidebars. The font is narrow-width thus good for editing
+  // that uses side-by-side panes such as for diffing two file versions.
+  "ui_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
+  // I wrote a custom theme that I like, that I download and install.
+  // If you're reading this, you'll likely want to change this line
+  // to your favorite out-of-the-box theme such as "light" or "dark".
+  "theme": "joelparkerhenderson-dark",
+  // I prefer 80-column text because it works the best for me on
+  // shell connections to remote servers that are 80x25 by default.
+  "preferred_line_length": 80,
+  "allow_rewrap": "anywhere",
+  // Disable all zed default silent reformatting because it can corrupt
+  // existing work; instead, we prefer to enable the reformatting on a
+  // case-by-case basis for any specific syntaxes or path patterns.
+  "format_on_save": false,
+  "remove_trailing_whitespace_on_save": false,
+  "ensure_final_newline_on_save": false,
+  // Language Server Protocol (LSP)
+  "lsp": {
+    // The tool "rust-analyzer" provides Rust programming language help.
+    // See the "inlay_hints" setting that uses this LSP to show Rust types.
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        }
+      }
+    }
+  },
+  // The setting "inlay_hints" makes Zed show more programming help,
+  // including LSP rust-analyzer type hints for variables.
+  "inlay_hints": {
+    "enabled": true
+  }
+}
